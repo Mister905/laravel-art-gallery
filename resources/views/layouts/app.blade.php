@@ -13,9 +13,6 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -24,15 +21,15 @@
         <nav>
             <div class="nav-wrapper custom-nav-wrapper">
                 <span class="nav-text">Art Gallery</span>
-                <img class="nav-img" src="{{URL::asset('/img/palette.png')}}" alt="Painter's Palette">
+                <img class="nav-img" src="{{URL::asset('img/palette.png')}}" alt="Painter's Palette">
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 @guest
                 <li>
-                    <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                     <li>
-                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @endif
                 @else
