@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['middleware' =>'guest', function(){
+    return view('landing');
+}]);
 
 Auth::routes();
 

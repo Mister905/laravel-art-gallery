@@ -15,15 +15,16 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="body-bg-color">
     <div id="app">
         <nav>
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Art Gallery</a>
+            <div class="nav-wrapper custom-nav-wrapper">
+                <span class="nav-text">Art Gallery</span>
+                <img class="nav-img" src="{{URL::asset('/img/palette.png')}}" alt="Painter's Palette">
               <ul id="nav-mobile" class="right hide-on-med-and-down">
                 @guest
                 <li>
