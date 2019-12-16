@@ -17,6 +17,10 @@
     margin-top: 50px;
 }
 
+.mt-25 {
+    margin-top: 25px;
+}
+
 .alert {
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
@@ -72,4 +76,29 @@
 
 .nav-link {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.btn-purple {
+    background: #5645a2 !important;
+}
+
+/* label focus color */
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+color: #5645a2 !important;
+}
+
+/* label underline focus color */
+.input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+border-bottom: 1px solid #5645a2 !important;
+box-shadow: 0 1px 0 0 #5645a2 !important;
+}
+
+.custom-icon {
+    display: inline-flex;
+    vertical-align: top;
+    margin-right: 10px !important;
+}
+
+.btn-back {
+    min-width: 5rem;
 }

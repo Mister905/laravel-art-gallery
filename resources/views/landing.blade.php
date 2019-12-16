@@ -99,15 +99,19 @@
             transition: all 0.4s ease 0s;
         }
 
+        .btn-landing-login {
+            padding: 15px 30px;
+        }
+
+        .btn-landing-register {
+            padding: 15px 20px;
+        }
+
         .btn-landing:hover {
             color: #3e2b96 !important;
             background: #FFF;
             border: 4px solid #1a0b5e !important;
             transition: all 0.4s ease 0s;
-        }
-
-        .btn-landing-login {
-            width: 120.719px;
         }
 
         .landing-login {
@@ -132,7 +136,7 @@
                     <a href="{{ route('login') }}" class="btn-landing btn-landing-login">Login</a>
                 </div>
                 <div class="landing-register">
-                    <a href="{{ route('register') }}" class="btn-landing">Register</a>
+                    <a href="{{ route('register') }}" class="btn-landing btn-landing-register">Register</a>
                 </div>    
             </div>
         </div>

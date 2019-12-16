@@ -44,7 +44,7 @@
                     <label class="active" for="password-confirm">{{ __('Confirm Password') }}</label>
                 </div>
                 <div class="input-field col m6 offset-m3">
-                    <button type="submit" class="btn btn purple darken-2 waves-effect waves-purple right">
+                    <button type="submit" class="btn btn-purple waves-effect waves-purple right">
                         {{ __('Register') }}
                     </button>
                 </div>

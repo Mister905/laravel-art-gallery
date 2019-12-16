@@ -31,7 +31,7 @@
                     @enderror
                 </div>
                 <div class="input-field col m6 offset-m3">
-                    <button type="submit" class="btn purple darken-2 waves-effect waves-purple right">
+                    <button type="submit" class="btn btn-purple waves-effect waves-purple right">
                         {{ __('Login') }}
                     </button>
                 </div>
