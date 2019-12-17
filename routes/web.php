@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +16,6 @@ Route::get('/', ['middleware' =>'guest', function(){
 
 Auth::routes();
 
-Route::resource('artists', 'ArtistsController');
+Route::resource('artists', 'ArtistsController')->middleware('auth');
+
+
