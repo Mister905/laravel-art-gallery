@@ -72,7 +72,7 @@
                     </div>
                     <div class="row">
                         <div class="col m6 offset-m3">
-                            {{ Form::submit('Create', ['class'=>'btn btn-purple waves-effect waves-purple right']) }}
+                            {{ Form::button('Create', ['type'=>'submit', 'class'=>'btn btn-purple waves-effect waves-purple right']) }}
                         </div>
                     </div>
                 {!! Form::close() !!}

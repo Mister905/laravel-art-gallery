@@ -116,7 +116,7 @@ class ArtistsController extends Controller
         $artist->save();
 
 
-        return redirect()->route('artists.show', ['artist' => $artist->id])->with('success', 'Post Updated');
+        return redirect()->route('artists.show', ['artist' => $artist->id])->with('success', 'Record Updated');
     }
 
     /**
