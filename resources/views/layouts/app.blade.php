@@ -19,19 +19,19 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
             @guest
             <li>
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="sans-serif" href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
             @if (Route::has('register'))
                 <li>
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="sans-serif" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @endif
             @else
             <li>
-                <a class="nav-link">{{ Auth::user()->name }}</span></a>
+                <a class="sans-serif">{{ Auth::user()->name }}</span></a>
             </li>
             <li>
-                <a class="nav-link" href="{{ route('logout') }}"
+                <a class="sans-serif" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}

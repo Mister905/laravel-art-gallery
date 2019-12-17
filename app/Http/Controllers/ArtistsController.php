@@ -56,6 +56,7 @@ class ArtistsController extends Controller
         $artist->death_date = $request->input('death_date');
         $artist->death_place = $request->input('death_place');
         $artist->nationality = $request->input('nationality');
+        $artist->biography = $request->input('biography');
         $artist->save();
         
         return redirect()->route('artists.show', ['artist' => $artist->id])->with('success', 'Record Created');
@@ -102,7 +103,7 @@ class ArtistsController extends Controller
             'death_date' => 'required',
             'death_place' => 'required',
             'nationality' => 'required',
-            'biography' => 'required',
+            'biography' => 'required'
         ]);
 
         $artist = Artist::find($id);
@@ -113,6 +114,7 @@ class ArtistsController extends Controller
         $artist->death_date = $request->input('death_date');
         $artist->death_place = $request->input('death_place');
         $artist->nationality = $request->input('nationality');
+        $artist->biography = $request->input('biography');
         $artist->save();
 
 
@@ -127,6 +129,8 @@ class ArtistsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $artist = Artist::find($id);    
+        $artist->delete();
+        return redirect('/artists')->with('success', 'Artist Deleted');
     }
 }

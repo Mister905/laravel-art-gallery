@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (session('success'))
+    <?= "<script>M.toast({html: '".session('success')."'})</script>" ?>
+@endif
+
 <div class="row">
     <div class="col m12 card mt-50">
         <div class="row mt-25">

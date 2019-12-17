@@ -9445,7 +9445,7 @@ input[type=range]::-ms-thumb {
   margin-top: 30px;
 }
 
-.nav-link {
+.sans-serif {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
@@ -9487,5 +9487,27 @@ input[type=range]::-ms-thumb {
 
 .display-field {
   margin-top: 5px;
+}
+
+.modal-heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.modal-prompt {
+  font-size: 1.3rem;
+}
+
+.btn-modal-confirm {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+.custom-modal-footer {
+  margin-bottom: 10px;
+}
+
+.delete-model-form {
+  display: inline;
 }
 
