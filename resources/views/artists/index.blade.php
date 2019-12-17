@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col m4 offset-m4">
+            <div class="col m2 offset-m5">
                 @if (count($artists) > 0)
                     @foreach ($artists as $artist)
                         <div class="card">

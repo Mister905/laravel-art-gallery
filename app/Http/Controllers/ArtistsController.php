@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Artist;
 
+use Illuminate\Support\Facades\Storage;
+
 class ArtistsController extends Controller
 {
     /**
@@ -121,10 +123,31 @@ class ArtistsController extends Controller
             'death_date' => 'required',
             'death_place' => 'required',
             'nationality' => 'required',
-            'biography' => 'required'
+            'biography' => 'required',
+            'profile_image' => 'image|nullable|max:5120'
         ]);
 
         $artist = Artist::find($id);
+
+        // Handle File Upload
+        if ($request->hasFile('profile_image')) {
+
+            // Delete current profile image unless default image is current
+            if ($artist->profile_image != 'default.png') {
+                Storage::delete('public/profile_images/'.$artist->profile_image);
+            }
+
+            // File name with extension
+            $file_ext = $request->file('profile_image')->getClientOriginalName();
+            // File name
+            $filename = pathinfo($file_ext, PATHINFO_FILENAME);
+            // File Extension
+            $extension = $request->file('profile_image')->getClientOriginalExtension();
+            // File name to store
+            $file_name_store = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('profile_image')->storeAs('public/profile_images', $file_name_store);
+        }
+
         $artist->name = $request->input('name');
         $artist->birth_name = $request->input('birth_name');
         $artist->birth_date = $request->input('birth_date');
@@ -133,6 +156,7 @@ class ArtistsController extends Controller
         $artist->death_place = $request->input('death_place');
         $artist->nationality = $request->input('nationality');
         $artist->biography = $request->input('biography');
+        $artist->profile_image = $file_name_store;
         $artist->save();
 
 

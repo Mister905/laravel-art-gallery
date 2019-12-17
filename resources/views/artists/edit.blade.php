@@ -13,8 +13,27 @@
         </div>
         <div class="row">
             <div class="col m12">
-                {!! Form::open(['action' => ['ArtistsController@update', $artist->id], 'method' => 'POST']) !!}
-                    <div class="row">
+                {!! Form::open(['action' => ['ArtistsController@update', $artist->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+                <div class="row">
+                    <div class="col m4 offset-m4">
+                        <div class="current-profile-label">Current Profile Image</div>
+                        <img class="responsive-img" src="/storage/profile_images/{{ $artist->profile_image }}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col m6 offset-m3">
+                        <div class="file-field input-field">
+                            <div class="btn btn-purple waves-effect waves-purple">
+                                <span><i class="material-icons">add_a_photo</i></span>
+                                {{ Form::file('profile_image')}}
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="row">
                         <div class="input-field col m6 offset-m3">
                             {{ Form::text('name', $artist->name, ['class' => ''.($errors->has('name') ? 'invalid':'')]) }}
                             {{ Form::label('name', 'Name', ['class' => 'active']) }} 
