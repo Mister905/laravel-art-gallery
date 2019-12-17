@@ -20,46 +20,48 @@
             </div>
         </div>
         <div class="row mt-25">
-            <div class="col m6">IMG</div>
+            <div class="col m4 offset-m1">
+                <img class="responsive-img" src="/storage/profile_images/{{ $artist->profile_image }}" alt="">
+            </div>
             <div class="col m6">
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Name</div>
                         <div class="display-field">{{ $artist->name }}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Birth Name</div>
                         <div class="display-field">{{ $artist->birth_name }}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Birth Date</div>
                         <div class="display-field">{{ $artist->birth_date }}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Birth Place</div>
                         <div class="display-field">{{ $artist->birth_place }}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Death Date</div>
                         <div class="display-field">{{ $artist->death_date }}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Death Place</div>
                         <div class="display-field">{{ $artist->death_place }}</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col m8 offset-m2">
+                    <div class="col m11 offset-m1">
                         <div class="display-label bold-text">Nationality</div>
                         <div class="display-field">{{ $artist->nationality }}</div>
                     </div>

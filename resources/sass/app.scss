@@ -86,13 +86,13 @@
 
 /* label focus color */
 .input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
-color: #5645a2 !important;
+    color: #5645a2 !important;
 }
 
 /* label underline focus color */
 .input-field input:focus, .materialize-textarea:focus:not([readonly]) {
-border-bottom: 1px solid #5645a2 !important;
-box-shadow: 0 1px 0 0 #5645a2 !important;
+    border-bottom: 1px solid #5645a2 !important;
+    box-shadow: 0 1px 0 0 #5645a2 !important;
 }
 
 .custom-icon {

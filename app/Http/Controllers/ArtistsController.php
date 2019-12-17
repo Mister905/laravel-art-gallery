@@ -46,7 +46,24 @@ class ArtistsController extends Controller
             'death_place' => 'required',
             'nationality' => 'required',
             'biography' => 'required',
+            'profile_image' => 'image|nullable|max:5120'
         ]);
+
+        // Handle File Upload
+        if ($request->hasFile('profile_image')) {
+            // File name with extension
+            $file_ext = $request->file('profile_image')->getClientOriginalName();
+            // File name
+            $filename = pathinfo($file_ext, PATHINFO_FILENAME);
+            // File Extension
+            $extension = $request->file('profile_image')->getClientOriginalExtension();
+            // File name to store
+            $file_name_store = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('profile_image')->storeAs('public/profile_images', $file_name_store);
+
+        } else {
+            $file_name_store = 'default.png';
+        }
 
         $artist = new Artist;
         $artist->name = $request->input('name');
@@ -57,6 +74,7 @@ class ArtistsController extends Controller
         $artist->death_place = $request->input('death_place');
         $artist->nationality = $request->input('nationality');
         $artist->biography = $request->input('biography');
+        $artist->profile_image = $file_name_store;
         $artist->save();
         
         return redirect()->route('artists.show', ['artist' => $artist->id])->with('success', 'Record Created');

@@ -19,19 +19,19 @@
             </div>
         </div>
         <div class="row">
-            <div class="col m12">
+            <div class="col m4 offset-m4">
                 @if (count($artists) > 0)
                     @foreach ($artists as $artist)
-                        <div class="row">
-                            <div class="col m6 offset-m3 card">
-                                <div class="page-heading">
-                                <a href="/artists/{{ $artist->id }}">{{ $artist->name }}</a>
-                                </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="responsive-img" src="/storage/profile_images/{{ $artist->profile_image }}">
+                                <a href="/artists/{{ $artist->id }}"><span class="card-title">{{ $artist->name }}</span></a>
+                                
                             </div>
                         </div>
                     @endforeach
                 @else
-                    <div class="page-heading">
+                    <div class="page-heading center-align">
                         No artists found...
                     </div>
                 @endif
