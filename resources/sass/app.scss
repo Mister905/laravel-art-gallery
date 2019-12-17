@@ -9,7 +9,7 @@
     margin-top: 50px;
 }
 
-.auth-heading {
+.page-heading {
     font-size: 3rem;
 }
 
@@ -80,6 +80,7 @@
 
 .btn-purple {
     background: #5645a2 !important;
+    color: #FFF !important;
 }
 
 /* label focus color */
@@ -101,4 +102,12 @@ box-shadow: 0 1px 0 0 #5645a2 !important;
 
 .btn-back {
     min-width: 5rem;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.display-field {
+    margin-top: 5px;
 }

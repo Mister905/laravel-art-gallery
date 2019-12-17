@@ -6,7 +6,7 @@
     <div class="col m12 card auth-card">
         <div class="row">
             <div class="col m12 center-align">
-                <div class="auth-heading">Login</div>
+                <div class="page-heading">Login</div>
             </div>
         </div>
         <div class="row mt-50">

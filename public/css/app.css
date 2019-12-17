@@ -9380,7 +9380,7 @@ input[type=range]::-ms-thumb {
   margin-top: 50px;
 }
 
-.auth-heading {
+.page-heading {
   font-size: 3rem;
 }
 
@@ -9451,6 +9451,7 @@ input[type=range]::-ms-thumb {
 
 .btn-purple {
   background: #5645a2 !important;
+  color: #FFF !important;
 }
 
 /* label focus color */
@@ -9477,5 +9478,13 @@ input[type=range]::-ms-thumb {
 
 .btn-back {
   min-width: 5rem;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.display-field {
+  margin-top: 5px;
 }
 
