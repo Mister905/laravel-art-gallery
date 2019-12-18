@@ -9521,3 +9521,11 @@ input[type=range]::-ms-thumb {
      object-fit: cover;
 }
 
+.show-artist-label {
+  margin-bottom: 10px;
+}
+
+.show-artist-year {
+  margin-bottom: 10px;
+}
+

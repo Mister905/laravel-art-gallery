@@ -26,7 +26,7 @@
                     }
                     echo "<div class='card col m3'>
                             <div class='card-image'>
-                                <img class=' index-image' src='/storage/profile_images/". $artists[$i]->profile_image."'>
+                                <img class='img-responsive index-image' src='/storage/profile_images/". $artists[$i]->profile_image."'>
                                 <a href='/artists/".$artists[$i]->id."'><span class='card-title'>".$artists[$i]->name."</span></a>
                             </div>
                         </div>";
