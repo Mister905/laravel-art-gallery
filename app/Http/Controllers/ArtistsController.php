@@ -48,11 +48,12 @@ class ArtistsController extends Controller
             'death_place' => 'required',
             'nationality' => 'required',
             'biography' => 'required',
-            'profile_image' => 'image|nullable|max:5120'
+            'profile_image' => 'image|nullable|max:100000'
         ]);
 
         // Handle File Upload
         if ($request->hasFile('profile_image')) {
+
             // File name with extension
             $file_ext = $request->file('profile_image')->getClientOriginalName();
             // File name
@@ -123,8 +124,7 @@ class ArtistsController extends Controller
             'death_date' => 'required',
             'death_place' => 'required',
             'nationality' => 'required',
-            'biography' => 'required',
-            'profile_image' => 'image|nullable|max:5120'
+            'biography' => 'required'
         ]);
 
         $artist = Artist::find($id);
@@ -146,6 +146,7 @@ class ArtistsController extends Controller
             // File name to store
             $file_name_store = $filename.'_'.time().'.'.$extension;
             $path = $request->file('profile_image')->storeAs('public/profile_images', $file_name_store);
+            $artist->profile_image = $file_name_store;
         }
 
         $artist->name = $request->input('name');
@@ -156,7 +157,6 @@ class ArtistsController extends Controller
         $artist->death_place = $request->input('death_place');
         $artist->nationality = $request->input('nationality');
         $artist->biography = $request->input('biography');
-        $artist->profile_image = $file_name_store;
         $artist->save();
 
 

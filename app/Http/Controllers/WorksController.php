@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Artist;
+
+use App\Work;
+
+use Illuminate\Support\Facades\Storage;
+
 class WorksController extends Controller
 {
     /**
@@ -11,9 +17,18 @@ class WorksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($artist_id)
     {
-        //
+        $artist = Artist::find($artist_id);
+
+        $works = Work::where('artist_id', $artist_id)->get();
+
+        $data = [
+            'artist'  => $artist,
+            'works'   => $works
+        ];
+
+        return view('works.index')->with('data', $data);
     }
 
     /**
@@ -21,9 +36,10 @@ class WorksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($artist_id)
     {
-        //
+        $artist = Artist::find($artist_id);
+        return view('works.create')->with('artist', $artist);
     }
 
     /**
@@ -32,9 +48,43 @@ class WorksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $artist_id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'artist' => 'required',
+            'year' => 'required',
+            'location' => 'required',
+            'image' => 'image|nullable|max:100000'
+        ]);
+
+        // Handle File Upload
+        if ($request->hasFile('image')) {
+
+            // File name with extension
+            $file_ext = $request->file('image')->getClientOriginalName();
+            // File name
+            $filename = pathinfo($file_ext, PATHINFO_FILENAME);
+            // File Extension
+            $extension = $request->file('image')->getClientOriginalExtension();
+            // File name to store
+            $file_name_store = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/work_images', $file_name_store);
+
+        } else {
+            $file_name_store = 'default.png';
+        }
+
+        $work = new Work;
+        $work->artist_id = $artist_id;
+        $work->title = $request->input('title');
+        $work->artist = $request->input('artist');
+        $work->year = $request->input('year');
+        $work->location = $request->input('location');
+        $work->image = $file_name_store;
+        $work->save();
+        
+        return redirect('works/'.$work->id.'/show')->with('success', 'Record Created'); 
     }
 
     /**
@@ -43,9 +93,10 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($work_id)
     {
-        //
+        $work = Work::find($work_id);
+        return view('works.show')->with('work', $work);
     }
 
     /**

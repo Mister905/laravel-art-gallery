@@ -16,7 +16,7 @@
                 <div class="page-heading">{{ $artist->name }}</div>
             </div>
             <div class="col m2 offset-m1 center-align">
-                <a class="btn btn-purple waves-effect waves-purple" href="/artists/{{ $artist->id }}/edit"><i class="material-icons dp48">mode_edit</i></a>
+                <a class="btn btn-purple waves-effect waves-purple" href="/artists/{{ $artist->id }}/edit"><i class="material-icons">mode_edit</i></a>
             </div>
         </div>
         <div class="row mt-25">
@@ -75,7 +75,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col m2 offset-m10 center-align">
+
+            <div class="col m2 center-align">
+            <a class="btn btn-purple waves-effect waves-purple" href="/works/{{  $artist->id }}">
+                    <i class="material-icons custom-icon">apps</i>
+                    Works
+                </a>
+            </div>
+            <div class="col m2 offset-m8 center-align">
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
                     var elems = document.querySelectorAll('.modal');

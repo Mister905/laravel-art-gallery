@@ -9446,7 +9446,7 @@ input[type=range]::-ms-thumb {
 }
 
 .sans-serif {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-family: "Arimo", sans-serif;
 }
 
 .btn-purple {
@@ -9474,7 +9474,7 @@ input[type=range]::-ms-thumb {
   display: -webkit-inline-box;
   display: inline-flex;
   vertical-align: top;
-  margin-right: 10px !important;
+  margin-right: 5px !important;
 }
 
 .btn-back {
@@ -9509,5 +9509,15 @@ input[type=range]::-ms-thumb {
 
 .delete-model-form {
   display: inline;
+}
+
+.current-profile-label {
+  color: #9e9e9e;
+}
+
+.index-image {
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 

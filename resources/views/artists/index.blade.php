@@ -17,26 +17,34 @@
                     <i class="material-icons dp48">add</i>
                 </a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col m2 offset-m5">
-                @if (count($artists) > 0)
-                    @foreach ($artists as $artist)
-                        <div class="card">
-                            <div class="card-image">
-                                <img class="responsive-img" src="/storage/profile_images/{{ $artist->profile_image }}">
-                                <a href="/artists/{{ $artist->id }}"><span class="card-title">{{ $artist->name }}</span></a>
-                                
+        </div> 
+        @if (count($artists) > 0)
+            <?php
+                for ($i=0; $i < count($artists); $i++) { 
+                    if ($i % 4 == 0) {
+                        echo '<div class="row index-row">';
+                    }
+                    echo "<div class='card col m3'>
+                            <div class='card-image'>
+                                <img class=' index-image' src='/storage/profile_images/". $artists[$i]->profile_image."'>
+                                <a href='/artists/".$artists[$i]->id."'><span class='card-title'>".$artists[$i]->name."</span></a>
                             </div>
-                        </div>
-                    @endforeach
-                @else
-                    <div class="page-heading center-align">
-                        No artists found...
-                    </div>
-                @endif
+                        </div>";
+
+                    if ($i % 4 == 3) {
+                        echo '</div>';
+                    }
+                }
+            ?>
+        @else
+        <div class="row">
+            <div class="col m12">
+                <div class="page-heading center-align">
+                    No artists found...
+                </div>
             </div>
         </div>
+        @endif
     </div>
 </div>
 @endsection
