@@ -171,7 +171,10 @@ class ArtistsController extends Controller
      */
     public function destroy($id)
     {
-        $artist = Artist::find($id);    
+        $artist = Artist::find($id); 
+        if ($artist->profile_image != 'default.jpg') {
+            Storage::delete('public/profile_images/'.$artist->profile_image);
+        }   
         $artist->delete();
         return redirect('/artists')->with('success', 'Record Deleted');
     }

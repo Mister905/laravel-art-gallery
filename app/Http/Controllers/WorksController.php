@@ -155,7 +155,7 @@ class WorksController extends Controller
         $work->location = $request->input('location');
         $work->save();
 
-        return redirect('works/'.$work->artist_id.'')->with('success', 'Record Deleted');
+        return redirect('works/'.$work->id.'/show')->with('success', 'Record Updated');
     }
 
     /**
@@ -166,7 +166,10 @@ class WorksController extends Controller
      */
     public function destroy($work_id)
     {
-        $work = Work::find($work_id);    
+        $work = Work::find($work_id);
+        if ($work->image != 'default.jpg') {
+            Storage::delete('public/work_images/'.$work->image);
+        }    
         $work->delete();
         return redirect('works/'.$work->artist_id.'')->with('success', 'Record Deleted'); 
     }

@@ -76,7 +76,7 @@
         </div>
         <div class="row">
             <div class="col m2 center-align">
-                <a class="btn btn-purple waves-effect waves-purple" href="/works/{{  $artist->id }}">
+                <a class="btn btn-purple waves-effect waves-purple sans-serif" href="/works/{{  $artist->id }}">
                     <i class="material-icons custom-icon">apps</i>
                     Works
                 </a>
