@@ -72,7 +72,7 @@ class WorksController extends Controller
             $path = $request->file('image')->storeAs('public/work_images', $file_name_store);
 
         } else {
-            $file_name_store = 'default.png';
+            $file_name_store = 'default.jpg';
         }
 
         $work = new Work;
@@ -105,9 +105,10 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($work_id)
     {
-        //
+        $work = Work::find($work_id);
+        return view('works.edit')->with('work', $work);
     }
 
     /**
@@ -117,9 +118,44 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $work_id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'artist' => 'required',
+            'year' => 'required',
+            'location' => 'required',
+        ]);
+
+        $work = Work::find($work_id);
+
+        // Handle File Upload
+        if ($request->hasFile('image')) {
+
+            // Delete current profile image unless default image is current
+            if ($work->image != 'default.jpg') {
+                Storage::delete('public/work_images/'.$work->image);
+            }
+
+            // File name with extension
+            $file_ext = $request->file('image')->getClientOriginalName();
+            // File name
+            $filename = pathinfo($file_ext, PATHINFO_FILENAME);
+            // File Extension
+            $extension = $request->file('image')->getClientOriginalExtension();
+            // File name to store
+            $file_name_store = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/work_images', $file_name_store);
+            $work->image = $file_name_store;
+        }
+
+        $work->title = $request->input('title');
+        $work->artist = $request->input('artist');
+        $work->year = $request->input('year');
+        $work->location = $request->input('location');
+        $work->save();
+
+        return redirect('works/'.$work->artist_id.'')->with('success', 'Record Deleted');
     }
 
     /**

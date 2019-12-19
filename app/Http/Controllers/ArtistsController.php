@@ -65,7 +65,7 @@ class ArtistsController extends Controller
             $path = $request->file('profile_image')->storeAs('public/profile_images', $file_name_store);
 
         } else {
-            $file_name_store = 'default.png';
+            $file_name_store = 'default.jpg';
         }
 
         $artist = new Artist;
@@ -133,7 +133,7 @@ class ArtistsController extends Controller
         if ($request->hasFile('profile_image')) {
 
             // Delete current profile image unless default image is current
-            if ($artist->profile_image != 'default.png') {
+            if ($artist->profile_image != 'default.jpg') {
                 Storage::delete('public/profile_images/'.$artist->profile_image);
             }
 
