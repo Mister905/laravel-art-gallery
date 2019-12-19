@@ -21,7 +21,15 @@
         </div>
         <div class="row mt-25">
             <div class="col m4 offset-m1">
-                <img class="responsive-img" src="/storage/profile_images/{{ $artist->profile_image }}" alt="">
+                <script>
+                    // Material Box
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var elems = document.querySelectorAll('.materialboxed');
+                        var instances = M.Materialbox.init(elems, null);
+                    }); 
+                </script>
+
+                <img class="responsive-img materialboxed" src="/storage/profile_images/{{ $artist->profile_image }}" alt="">
             </div>
             <div class="col m6">
                 <div class="row">
