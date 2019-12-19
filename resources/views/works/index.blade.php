@@ -24,17 +24,17 @@
         @if (count($data['works']) > 0)
         <?php
             for ($i=0; $i < count($data['works']); $i++) { 
-                if ($i % 4 == 0) {
+                if ($i % 3 == 0) {
                     echo '<div class="row index-row">';
                 }
                 echo "<div class='card col m4'>
                         <div class='card-image'>
                             <img class='img-responsive index-image' src='/storage/work_images/".$data['works'][$i]->image."'>
-                            <a href='/works/".$data['works'][$i]->id."/show'><span class='card-title'>".$data['works'][$i]->title."</span></a>
+                            <a href='/works/".$data['works'][$i]->id."/show'><span class='card-title custom-card-title'>".$data['works'][$i]->title."</span></a>
                         </div>
                     </div>";
 
-                if ($i % 4 == 3) {
+                if ($i % 3 == 2) {
                     echo '</div>';
                 }
             }

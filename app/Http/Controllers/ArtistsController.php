@@ -173,6 +173,6 @@ class ArtistsController extends Controller
     {
         $artist = Artist::find($id);    
         $artist->delete();
-        return redirect('/artists')->with('success', 'Artist Deleted');
+        return redirect('/artists')->with('success', 'Record Deleted');
     }
 }

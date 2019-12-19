@@ -9529,3 +9529,7 @@ input[type=range]::-ms-thumb {
   margin-bottom: 10px;
 }
 
+.custom-card-title {
+  background: rgba(0, 0, 0, 0.7);
+}
+

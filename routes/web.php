@@ -25,3 +25,5 @@ Route::get('/works/create/{artist_id}', 'WorksController@create');
 Route::post('/works/create/{artist_id}', 'WorksController@store');
 
 Route::get('/works/{work_id}/show', 'WorksController@show');
+
+Route::delete('/works/{work_id}/destroy', 'WorksController@destroy');

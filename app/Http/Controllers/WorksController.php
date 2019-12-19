@@ -128,8 +128,10 @@ class WorksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($work_id)
     {
-        //
+        $work = Work::find($work_id);    
+        $work->delete();
+        return redirect('works/'.$work->artist_id.'')->with('success', 'Record Deleted'); 
     }
 }

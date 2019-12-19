@@ -5,7 +5,7 @@
     <div class="col m12 card">
         <div class="row mt-25">
             <div class="col m2 center-align">
-                <a class="btn btn-purple waves-effect waves-purple" href="/artists"><i class="material-icons ">arrow_back</i></a>
+                <a class="btn btn-purple waves-effect waves-purple" href="/works/{{  $artist->id }}"><i class="material-icons ">arrow_back</i></a>
             </div>
             <div class="col m6 offset-m1 center-align">
             <div class="page-heading">Create Work by {{ $artist->name }}</div>
