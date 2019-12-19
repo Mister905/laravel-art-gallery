@@ -28,7 +28,6 @@
                         var instances = M.Materialbox.init(elems, null);
                     }); 
                 </script>
-
                 <img class="responsive-img materialboxed" src="/storage/profile_images/{{ $artist->profile_image }}" alt="">
             </div>
             <div class="col m6">
