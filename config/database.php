@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Str;
 
+$url = parse_url(getenv("DATABASE_URL"));
+$host = $url["host"]??null;
+$username = $url["user"]??null;
+$password = $url["pass"]??null;
+$database = substr($url["path"], 1)??null;
+
 return [
 
     /*
@@ -14,14 +20,6 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
-    // Place these variables above
-    $url = parse_url(getenv("DATABASE_URL"));
-    $host = $url["host"]??null;
-    $username = $url["user"]??null;
-    $password = $url["pass"]??null;
-    $database = substr($url["path"], 1)??null;
-
 
     'default' => env('DB_CONNECTION', 'pgsql_prod'),
 
