@@ -10,9 +10,11 @@
 |
 */
 
-Route::get('/', ['middleware' =>'guest', function(){
-    return view('landing');
-}]);
+// Route::get('/', ['middleware' =>'guest', function(){
+//     return view('landing');
+// }]);
+
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
