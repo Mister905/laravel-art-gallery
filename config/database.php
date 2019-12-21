@@ -15,7 +15,26 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    // Place these variables above
+    $url = parse_url(getenv("DATABASE_URL"));
+    $host = $url["host"]??null;
+    $username = $url["user"]??null;
+    $password = $url["pass"]??null;
+    $database = substr($url["path"], 1)??null;
+
+
+    'default' => env('DB_CONNECTION', 'pgsql_prod'),
+
+    'pgsql_production' => [
+        'driver' => 'pgsql',
+        'host' => $host,
+        'database' => $database,
+        'username' => $username,
+        'password' => $password,
+        'charset' => 'utf-8',
+        'prefix' => '',
+        'schema' => 'public',
+    ],
 
     /*
     |--------------------------------------------------------------------------
