@@ -14,7 +14,11 @@
 //     return view('landing');
 // }]);
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+
+Route::get('/', ['middleware' =>'guest', function(){
+    return view('landing');
+}]);
 
 Auth::routes();
 
