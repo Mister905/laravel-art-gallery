@@ -16,7 +16,7 @@
     <nav>
         <div class="nav-wrapper custom-nav-wrapper">
             <span class="nav-text">Art Gallery</span>
-            <img class="nav-img" src="{{URL::asset('img/palette.png')}}" alt="Painter's Palette">
+            <img class="nav-img" src="{{ asset('img/palette.png')}}" alt="Painter's Palette">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
             @guest
             <li>
