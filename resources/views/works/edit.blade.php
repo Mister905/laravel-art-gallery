@@ -15,8 +15,8 @@
             <div class="col m12">
                 {!! Form::open(['action' => ['WorksController@update', $work->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                 <div class="row">
-                    <div class="col m6 offset-m3">
-                        <div class="current-profile-label">Current Work Image</div>
+                    <div class="col m6 offset-m3 center-align">
+                        <div class="current-profile-label left">Current Work Image</div>
                         <img class="responsive-img" src="/storage/work_images/{{ $work->image }}" alt="">
                     </div>
                 </div>
