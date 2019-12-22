@@ -9535,7 +9535,7 @@ input[type=range]::-ms-thumb {
 }
 
 .artist-index-card {
-  padding: 10px !important;
+  padding: 0.75rem !important;
 }
 
 .btn-works {
