@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col m8 offset-m2 center-align">
+            <div class="col m6 offset-m3 center-align">
                 <script>
                     // Material Box
                     document.addEventListener('DOMContentLoaded', function() {
