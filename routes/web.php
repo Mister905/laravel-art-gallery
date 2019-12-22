@@ -10,15 +10,11 @@
 |
 */
 
-// Route::get('/', ['middleware' =>'guest', function(){
-//     return view('landing');
-// }]);
-
-// Route::get('/', 'HomeController@index');
-
-Route::get('/', ['middleware' =>'guest', function(){
+// Logged In Users will Redirect to the path defined in RouteServiceProvider
+// public const HOME = '/artists';
+Route::get('/', function(){
     return view('landing');
-}]);
+})->middleware('guest');
 
 Auth::routes();
 
