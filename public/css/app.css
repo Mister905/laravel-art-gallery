@@ -9538,3 +9538,7 @@ input[type=range]::-ms-thumb {
   padding: 10px !important;
 }
 
+.lowercase {
+  text-transform: lowercase !important;
+}
+
