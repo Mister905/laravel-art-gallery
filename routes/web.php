@@ -12,13 +12,15 @@
 
 // Logged In Users will Redirect to the path defined in RouteServiceProvider
 // public const HOME = '/artists';
-Route::get('/', function(){
-    return view('landing');
-})->middleware('guest');
+// Route::get('/', function(){
+//     return view('landing');
+// })->middleware('guest');
+
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::resource('artists', 'ArtistsController')->middleware('auth');
+Route::resource('artists', 'ArtistsController');
 
 Route::get('/works/{artist_id}', 'WorksController@index');
 

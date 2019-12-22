@@ -9,8 +9,7 @@ use App\Artist;
 use Illuminate\Support\Facades\Storage;
 
 class ArtistsController extends Controller
-{
-
+{ 
     /**
      * Create a new controller instance.
      *
