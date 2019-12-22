@@ -9534,3 +9534,7 @@ input[type=range]::-ms-thumb {
   background: rgba(0, 0, 0, 0.7);
 }
 
+.artist-index-card {
+  padding: 10px !important;
+}
+

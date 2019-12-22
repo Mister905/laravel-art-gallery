@@ -24,7 +24,7 @@
                     if ($i % 4 == 0) {
                         echo '<div class="row index-row">';
                     }
-                    echo "<div class='card col m3'>
+                    echo "<div class='card artist-index-card col m3'>
                             <div class='card-image'>
                                 <img class='img-responsive index-image' src='/storage/profile_images/".$artists[$i]->profile_image."'>
                                 <a href='/artists/".$artists[$i]->id."'><span class='card-title custom-card-title'>".$artists[$i]->name."</span></a>
