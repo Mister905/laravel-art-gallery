@@ -5,7 +5,7 @@
     <div class="col m12 card">
         <div class="row mt-25">
             <div class="col m2 center-align">
-            <a class="btn btn-purple waves-effect waves-purple" href="/misc/{{ $misc->id }}/show"><i class="material-icons ">arrow_back</i></a>
+            <a class="btn btn-purple waves-effect waves-purple" href="/misc/{{ $misc->id }}"><i class="material-icons ">arrow_back</i></a>
             </div>
             <div class="col m6 offset-m1 center-align">
                 <div class="page-heading">Update Misc. Record</div>
