@@ -30,6 +30,14 @@
                                 <a href='/artists/".$artists[$i]->id."'><span class='card-title custom-card-title'>".$artists[$i]->name."</span></a>
                             </div>
                         </div>";
+                    if ($i == count($artists) - 1) {
+                        echo "<div class='card artist-index-card col m3'>
+                            <div class='card-image'>
+                                <img class='img-responsive index-image' src='/storage/profile_images/girl.jpg'>
+                                <a href='/misc'><span class='card-title custom-card-title'>Misc.</span></a>
+                            </div>
+                        </div>";
+                    }
 
                     if ($i % 4 == 3) {
                         echo '</div>';

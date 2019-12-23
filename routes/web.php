@@ -35,3 +35,5 @@ Route::get('/works/{work_id}/edit', 'WorksController@edit');
 Route::put('/works/{work_id}/update', 'WorksController@update');
 
 Route::delete('/works/{work_id}/destroy', 'WorksController@destroy');
+
+Route::resource('misc', 'MiscController');

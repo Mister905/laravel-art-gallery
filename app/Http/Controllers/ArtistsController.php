@@ -90,7 +90,7 @@ class ArtistsController extends Controller
         $artist->profile_image = $file_name_store;
         $artist->save();
         
-        return redirect()->route('artists.show', ['artist' => $artist->id])->with('success', 'Record Created');
+        return redirect()->route('artists.show', $artist->id)->with('success', 'Record Created');
     }
 
     /**
