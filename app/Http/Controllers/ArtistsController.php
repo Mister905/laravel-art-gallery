@@ -169,8 +169,7 @@ class ArtistsController extends Controller
         $artist->biography = $request->input('biography');
         $artist->save();
 
-
-        return redirect()->route('artists.show', ['artist' => $artist->id])->with('success', 'Record Updated');
+        return redirect()->route('artists.show', $artist->id)->with('success', 'Record Updated');
     }
 
     /**

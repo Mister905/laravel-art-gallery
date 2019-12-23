@@ -153,7 +153,7 @@ class MiscController extends Controller
         $misc->location = $request->input('location');
         $misc->save();
 
-        return redirect('misc/'.$misc->id.'/show')->with('success', 'Record Updated');
+        return redirect()->route('misc.show', $misc->id)->with('success', 'Record Updated');
     }
 
     /**
